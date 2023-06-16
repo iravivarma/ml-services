@@ -1,0 +1,9 @@
+fastapi
+numpy
+pillow
+python-multipart
+uvicorn
+torch
+tensorflow
+transformers
+scipy

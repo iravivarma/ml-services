@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vqa-backend-api
+  name: vqa-backend
+  namespace: fastapi-backend
+
+
+spec:
+  selector:
+   matchLabels: 
+     app: visual-question-answering
+
+  replicas: 1
+  template:
+   metadata:
+     labels:
+        app: visual-question-answering
+
+   spec:
+     containers:
+       - name: vqa-backend-container
+         imagePullPolicy: IfNotPresent
+         image: rvarma123/visual-question-answering-backend
+         resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+         ports:
+          - containerPort: 80
+     imagePullSecrets:
+     - name: registry-credentials

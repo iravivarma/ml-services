@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: visual-question-answering-svc
+  name: visual-question-answering-svc
+  namespace: fastapi-backend
+
+spec:
+  selector:
+    app: visual-question-answering
+  ports:
+  - name: compute
+    nodePort: 30000
+    port: 80
+    targetPort: 80
+  type: NodePort
