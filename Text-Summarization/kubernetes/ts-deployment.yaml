@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ts-backend-api
+  name: text-summarization
+  namespace: fastapi-backend
+
+spec:
+  selector:
+    matchLabels:
+      app: text-summarization
+
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: text-summarization
+    spec:
+      containers:
+        - name: ts-backend-container
+          imagePullPolicy: IfNotPresent
+          image: rvarma123/ts-backend
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"
+          ports:
+            - containerPort: 81
+      imagePullSecrets:
+        - name: registry-credentials

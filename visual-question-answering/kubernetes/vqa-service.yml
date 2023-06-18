@@ -8,11 +8,10 @@ metadata:
   namespace: fastapi-backend
 
 spec:
+  type: LoadBalancer
   selector:
     app: visual-question-answering
   ports:
   - name: compute
-    nodePort: 30000
     port: 80
     targetPort: 80
-  type: NodePort

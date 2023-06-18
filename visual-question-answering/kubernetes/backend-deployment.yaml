@@ -23,7 +23,7 @@ spec:
      containers:
        - name: vqa-backend-container
          imagePullPolicy: IfNotPresent
-         image: rvarma123/visual-question-answering-backend
+         image: rvarma123/vqa-backend
          resources:
             limits:
               memory: "2Gi"
