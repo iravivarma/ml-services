@@ -8,7 +8,7 @@ metadata:
   namespace: fastapi-backend
 
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: visual-question-answering
   ports:

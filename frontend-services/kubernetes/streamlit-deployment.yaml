@@ -16,16 +16,16 @@ spec:
     metadata:
       labels:
         app: streamlit-app
-    
-    containers:
-      - name: streamlit-frontend-service
-        imagePullPolicy: IfNotPresent4
-        image: rvarma123/ml-services-frontend
-        resources:
-          limits:
-            cpu: "1000m"
-            memory: "2Gi"
-        ports:
-          containerPort: 8502
-    imagePullSecrets:
-      - name: registry-credentials
+    spec:
+      containers:
+        - name: streamlit-frontend-service
+          imagePullPolicy: IfNotPresent
+          image: rvarma123/streamlit-app
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"
+          ports:
+          - containerPort: 8502
+      imagePullSecrets:
+        - name: registry-credentials

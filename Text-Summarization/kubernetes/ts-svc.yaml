@@ -6,7 +6,7 @@ metadata:
   name: text-summarization-svc
   namespace: fastapi-backend
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: text-summarization
   ports:
