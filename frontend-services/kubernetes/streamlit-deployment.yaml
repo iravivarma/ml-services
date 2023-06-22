@@ -18,7 +18,7 @@ spec:
         app: streamlit-app
     spec:
       containers:
-        - name: streamlit-frontend-service
+        - name: streamlit-frontend-service-container
           imagePullPolicy: IfNotPresent
           image: rvarma123/streamlit-app
           resources:

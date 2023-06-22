@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ts-backend-container
-          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: IfNotPresent
           image: rvarma123/ts-backend
           resources:
             limits:
