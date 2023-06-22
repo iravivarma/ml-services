@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  frontend:
+    build: frontend-services
+    ports:
+      - 8502:8502
+    depends_on:
+      - text-summarization
+      # - visual-question-answering
+
+
+  text-summarization:
+    build: 
+      context: Text-Summarization
+      dockerfile: Text-Summarization/backend/Dockerfile
+    image: ts-backend 
+    ports:
+      - 81:81
+
+  # visual-question-answering:
+  #   build: visual-question-answering/backend
+  #   ports:
+  #     - 80:80

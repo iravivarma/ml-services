@@ -15,7 +15,7 @@ if st.button("Summarize"):
             'min_length':30,
             'max_length':150
         }
-        res= requests.post('http://127.0.0.1:81/input_string', json=payload, timeout=60)
+        res= requests.post('http://text-summarization:81/input_string', json=payload, timeout=60)
         print(res.json())
 
         ans=st.write(f"Summarized text is ***{res.json()['data'][0]['text']}***")
